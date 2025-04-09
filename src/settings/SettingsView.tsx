@@ -116,7 +116,7 @@ export default function SettingsView(props: IProps): React.JSX.Element {
                     <TextSettingItem 
                         name={"Model"}
                         description={"The value of the model parameter in the request body."}
-                        placeholder="gemini-1.5-flash"
+                        placeholder="gemini-2.0-flash"
                         value={settings.geminiApiSettings.model}
                         errorMessage={errors.get("geminiApiSettings.model")}
                         setValue={(value: string) =>

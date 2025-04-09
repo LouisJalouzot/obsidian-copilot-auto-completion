@@ -118,7 +118,7 @@ export const DEFAULT_SETTINGS: Settings = {
     geminiApiSettings: {
         key: "",
         url: "https://generativelanguage.googleapis.com/v1beta/models",
-        model: 'gemini-1.5-flash'
+        model: 'gemini-2.0-flash'
     },
     openAIApiSettings: {
         key: "",

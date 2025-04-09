@@ -74,7 +74,7 @@ describe('settingsSchema', () => {
     const validGeminiSettings = geminiApiSettingsSchema.parse({
         key: 'abc123',
         url: 'https://example.com',
-        model: 'gemini-1.5-flash',
+        model: 'gemini-2.0-flash',
     });
     const validTrigger = triggerSchema.parse({type: 'string', value: '# '});
     const validModelOptions = modelOptionsSchema.parse({
