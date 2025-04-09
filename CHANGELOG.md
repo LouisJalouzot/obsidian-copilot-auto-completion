@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.4
+- Added support for Google's Gemini API as a provider, allowing users to leverage Gemini models for completions.
+- Fixed test cases to properly handle the new Gemini API settings requirement.
+- Updated migration process to include Gemini API settings when upgrading from older versions.
+
 ## 1.1.3
 - Made openai api key optional for `OpenAI API` provider. This allows you to point the `OpenAI API` provider to any local model or other api provider that implements the OpenAI API.
 
