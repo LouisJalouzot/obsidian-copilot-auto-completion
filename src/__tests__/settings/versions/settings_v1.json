@@ -19,6 +19,11 @@
             "url": "http://localhost:11434/api/chat",
             "model": "mistral"
         },
+        "geminiApiSettings": {
+            "key": "***",
+            "url": "https://generativelanguage.googleapis.com/v1beta/models",
+            "model": "gemini-2.0-flash"
+        },
         "triggers": [
             {
                 "type": "string",

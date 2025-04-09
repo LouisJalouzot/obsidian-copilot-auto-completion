@@ -5,6 +5,7 @@ import {cloneDeep} from "lodash";
 import {
     azureOAIApiSettingsSchema,
     fewShotExampleSchema,
+    geminiApiSettingsSchema,
     modelOptionsSchema, ollamaApiSettingsSchema,
     openAIApiSettingsSchema
 } from "../../../settings/versions/shared";
@@ -70,6 +71,11 @@ describe('settingsSchema', () => {
         model: 'mistral',
 
     });
+    const validGeminiSettings = geminiApiSettingsSchema.parse({
+        key: 'abc123',
+        url: 'https://example.com',
+        model: 'gemini-1.5-flash',
+    });
     const validTrigger = triggerSchema.parse({type: 'string', value: '# '});
     const validModelOptions = modelOptionsSchema.parse({
         temperature: 0.5,
@@ -88,6 +94,7 @@ describe('settingsSchema', () => {
         azureOAIApiSettings: validAzureSettings,
         openAIApiSettings: validOpenAISettings,
         ollamaApiSettings: validOllamaSettings,
+        geminiApiSettings: validGeminiSettings,
         triggers: [validTrigger],
         delay: 1000,
         modelOptions: validModelOptions,

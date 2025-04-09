@@ -37,16 +37,17 @@ export function migrateFromV0ToV1(settings: SettingsV0): SettingsV1 {
         updatedSettings.chainOfThoughRemovalRegex = DEFAULT_SETTINGS_V1.chainOfThoughRemovalRegex;
     }
 
+    // Add new properties from v1
     updatedSettings.ignoredFilePatterns = DEFAULT_SETTINGS_V1.ignoredFilePatterns;
     updatedSettings.ignoredTags = DEFAULT_SETTINGS_V1.ignoredTags;
     updatedSettings.cacheSuggestions = DEFAULT_SETTINGS_V1.cacheSuggestions;
     updatedSettings.ollamaApiSettings = DEFAULT_SETTINGS_V1.ollamaApiSettings;
+    updatedSettings.geminiApiSettings = DEFAULT_SETTINGS_V1.geminiApiSettings;
     updatedSettings.debugMode = DEFAULT_SETTINGS_V1.debugMode;
 
     // Parsing the updated settings to ensure they match the SettingsV1 schema
     return settingsSchemaV1.parse(updatedSettings);
 }
-
 
 function migrateDefaultSettings(setting: any, previousDefault: any, currentDefault: any): any {
     const unchangedDefaultProperties = findEqualPaths(setting, previousDefault);
@@ -58,12 +59,10 @@ function migrateDefaultSettings(setting: any, previousDefault: any, currentDefau
     }
 }
 
-
 export const isSettingsV0 = (settings: object): boolean => {
     const result = settingsSchemaV0.safeParse(settings);
     return result.success;
 }
-
 
 export const isSettingsV1 = (settings: object): boolean => {
     const result = settingsSchemaV1.safeParse(settings);
